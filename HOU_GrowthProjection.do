@@ -29,9 +29,6 @@ reg passengers trend
 
 summarize rank year quarter passengers passhat trend q1 q2 q3 res
 
-
-***************************
-***************************
 ***************************
 
 rename value gdppd
@@ -92,8 +89,6 @@ gen largerss=e(rss)
 gen chi2 = largerss/smallrss
 
 ***************************
-***************************
-***************************
 
 merge m:m year quarter origin using quar_inc_pop
 rename _merge merged
@@ -121,8 +116,6 @@ estat bgodfrey
 //Chi value now small, reject null 
 //H0: no positive serial correlation
 
-***************************
-***************************
 ***************************
 
 merge 1:1 origin quarter year using "C:\Users\MDL\Desktop\HOU_TREND\quar_inc_pop.dta"
